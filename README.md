@@ -471,7 +471,28 @@ foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"
 
 - Contributed by @angelbruni
 
+# valueWithHighContrastFallback - valueWithHighContrastFallback()
+For using mssyles themed elements while respecting High Contrast. Known to be used with [Content](#content), [Background](#background), [AlphaRedGreenBlue](#alpharedgreenblue---argb), [DrawThemeBackground](#drawthemebackground---dtb), [GetThemeColor](#getthemecolor---gtc), [GetThemeFont](#getthemefont---gtf), [Icon](#icon---icon), [Padding](#padding), [Rect](#rect---rect).
 
+⚠️ When defining sizes in `valueWithHighContrastFallback()` wrap in single quotes.
+
+**Syntax:**
+```
+valueWithHighContrastFallback(themed, classic)
+```
+
+- `themed` - Default value read from the msstyles.
+- `classic` - Determines what value to use if a part is Aero styled or Classic styled. If a theme is applied it uses the first value, if you're using Windows Classic/Standard it uses the second value. It's best to leave as a hardcoded value.
+
+**Example:**
+
+The element will have the background defined by the image texture in `Explorer & Shell > Explorer > Control Panel > ControlPanel > NavigationPane > NavigationPaneTop Background`, however if this change is in a system DLL and windows classic or high contrast was enabled, the font will be Window Text as defined in the control panel.
+```
+<element background="valueWithHighContrastFallback(dtb(CONTROLPANEL,1,3),window)"/>
+```
+
+- Contributed by @ImSwordQueen
+- 
 # Width
 Set the width of the element. Known to be used with rp, SystemMetric, [GetThemeMetrics](#getthememetrics---gtmet).
 
