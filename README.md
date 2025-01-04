@@ -492,7 +492,7 @@ The element will have the background defined by the image texture in `Explorer &
 ```
 
 - Contributed by @ImSwordQueen
-- 
+
 # Width
 Set the width of the element. Known to be used with rp, SystemMetric, [GetThemeMetrics](#getthememetrics---gtmet).
 
